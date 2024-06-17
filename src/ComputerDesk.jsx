@@ -15,11 +15,17 @@ export default function ComputerDesk(props) {
 	const LeftBottomMonitorScreen = useRef();
 	const RightBottomMonitorScreen = useRef();
 
+	const [active, setActive] = useState(false);
+
 	const doSomething = (ref) => {
 		setActiveScreen(ref.current);
+		setActive(!active);
 	};
 
 	useFrame(() => {
+		if (!active) {
+			return;
+		}
 		cameraRef.current?.fitToBox(activeScreen, true);
 	});
 

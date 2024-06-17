@@ -13,9 +13,6 @@ import {
 } from "@react-three/drei";
 
 function App() {
-	const cameraRef = useRef();
-	const [camera, setCamera] = useState(cameraRef.current);
-
 	return (
 		<>
 			<ambientLight intensity={1} />
