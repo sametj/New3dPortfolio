@@ -5,26 +5,24 @@ import ComputerDesk from "./ComputerDesk";
 // export const screenContext = createContext();
 
 import {
-	CameraControls,
-	Center,
-	OrbitControls,
-	PresentationControls,
-	Stage,
+  CameraControls,
+  Center,
+  OrbitControls,
+  PresentationControls,
+  Stage,
 } from "@react-three/drei";
 
 function App() {
-	return (
-		<>
-			<ambientLight intensity={1} />
-			<Center>
-				<Stage
-					environment={"apartment"}
-					intensity={1}>
-					<ComputerDesk scale={0.5} />
-				</Stage>
-			</Center>
-		</>
-	);
+  return (
+    <>
+      <ambientLight intensity={1} />
+      <Center>
+        <Stage environment={"apartment"} intensity={1}>
+          <ComputerDesk scale={0.8} />
+        </Stage>
+      </Center>
+    </>
+  );
 }
 
 export default App;

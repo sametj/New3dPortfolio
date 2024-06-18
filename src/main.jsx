@@ -5,14 +5,14 @@ import { Canvas } from "@react-three/fiber";
 import "./index.css";
 
 const cameraSetting = {
-	fov: 75,
-	position: [0, 2, 4],
+  fov: 75,
+  position: [0, 0.5, 3.5],
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<Canvas camera={cameraSetting}>
-			<App />
-		</Canvas>
-	</React.StrictMode>
+  <React.StrictMode>
+    <Canvas camera={cameraSetting}>
+      <App />
+    </Canvas>
+  </React.StrictMode>
 );
