@@ -11,7 +11,9 @@ const cameraSetting = {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<Canvas camera={cameraSetting}>
+		<Canvas
+			dpr={[1, 2]}
+			camera={cameraSetting}>
 			<App />
 		</Canvas>
 	</React.StrictMode>

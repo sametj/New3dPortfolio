@@ -1,28 +1,26 @@
 import { useState, useRef, createContext, useEffect } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import ComputerDesk from "./ComputerDesk";
 
-// export const screenContext = createContext();
-
-import {
-  CameraControls,
-  Center,
-  OrbitControls,
-  PresentationControls,
-  Stage,
-} from "@react-three/drei";
+import { Center, Stage } from "@react-three/drei";
+import AdrianDesk from "./AdriansDesk";
 
 function App() {
-  return (
-    <>
-      <ambientLight intensity={1} />
-      <Center>
-        <Stage environment={"apartment"} intensity={1}>
-          <ComputerDesk scale={0.8} />
-        </Stage>
-      </Center>
-    </>
-  );
+	const { viewPort } = useThree();
+
+	return (
+		<>
+			<ambientLight intensity={1} />
+			<Center>
+				<Stage
+					environment={"apartment"}
+					intensity={1}>
+					{/* <ComputerDesk scale={0.8} /> */}
+					<AdrianDesk />
+				</Stage>
+			</Center>
+		</>
+	);
 }
 
 export default App;

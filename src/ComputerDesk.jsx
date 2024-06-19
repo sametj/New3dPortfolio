@@ -7,7 +7,7 @@ import {
 } from "@react-three/drei";
 import Welcome from "./screens/Welcome";
 import { useFrame, useThree } from "@react-three/fiber";
-import { log } from "three/examples/jsm/nodes/Nodes.js";
+
 // import { screenContext } from "./App";
 
 export default function ComputerDesk(props) {
@@ -21,7 +21,7 @@ export default function ComputerDesk(props) {
 	const LeftBottomMonitorScreen = useRef();
 	const RightBottomMonitorScreen = useRef();
 
-	const doSomething = (ref) => {
+	const setMonitor = (ref) => {
 		setActiveScreen(ref.current);
 		setActive(true);
 	};
@@ -43,7 +43,6 @@ export default function ComputerDesk(props) {
 			if (event.key === "Escape") {
 				// camera.position.set(0, 3, 5);
 				cameraRef.current?.reset(true);
-				// cameraRef.current?.moveTo(0, 3, 5);
 				setActive(false);
 			}
 		};
@@ -170,7 +169,7 @@ export default function ComputerDesk(props) {
 						position={[-0.203, 2.171, -3.654]}
 					/>
 					<mesh
-						onClick={(ref) => doSomething(LeftBottomMonitorScreen)}
+						onClick={(ref) => setMonitor(LeftBottomMonitorScreen)}
 						ref={LeftBottomMonitorScreen}
 						name='LeftBottomMonitor'
 						castShadow
@@ -184,7 +183,7 @@ export default function ComputerDesk(props) {
 						</Html>
 					</mesh>
 					<mesh
-						onClick={(ref) => doSomething(RightBottomMonitorScreen)}
+						onClick={(ref) => setMonitor(RightBottomMonitorScreen)}
 						ref={RightBottomMonitorScreen}
 						name='RightBottomMonitor'
 						castShadow
@@ -198,7 +197,7 @@ export default function ComputerDesk(props) {
 						</Html>
 					</mesh>
 					<mesh
-						onClick={(ref) => doSomething(RightTopMonitorScreen)}
+						onClick={(ref) => setMonitor(RightTopMonitorScreen)}
 						ref={RightTopMonitorScreen}
 						name='RightTopMonitor'
 						castShadow
@@ -212,7 +211,7 @@ export default function ComputerDesk(props) {
 						</Html>
 					</mesh>
 					<mesh
-						onClick={(ref) => doSomething(LeftTopMonitorScreen)}
+						onClick={(ref) => setMonitor(LeftTopMonitorScreen)}
 						ref={LeftTopMonitorScreen}
 						name='LeftTopMonitor'
 						castShadow
@@ -226,7 +225,7 @@ export default function ComputerDesk(props) {
 						</Html>
 					</mesh>
 					<mesh
-						onClick={(ref) => doSomething(MiddleTopMonitorScreen)}
+						onClick={(ref) => setMonitor(MiddleTopMonitorScreen)}
 						ref={MiddleTopMonitorScreen}
 						name='MiddleTopMonitor'
 						castShadow
