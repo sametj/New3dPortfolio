@@ -1,0 +1,9 @@
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90px;
+	height: 55px;
+	color: black;
+	background-color: white;
+}
