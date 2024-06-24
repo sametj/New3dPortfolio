@@ -1,9 +1,10 @@
 .welcome {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 200px;
-	height: 55px;
-	background-color: white;
-	color: black;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 55px;
+  overflow-y: scroll;
+  background-color: white;
+  color: black;
+  font-size: 5px;
 }
