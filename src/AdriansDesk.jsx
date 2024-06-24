@@ -61,7 +61,6 @@ export default function AdrianDesk(props) {
 	return (
 		<>
 			<CameraControls
-				mouseButtons={{ wheel: "none" }}
 				minDistance={3}
 				maxDistance={4}
 				minPolarAngle={Math.PI / 3}
