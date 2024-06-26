@@ -1,5 +1,6 @@
 import { Center, Stage } from "@react-three/drei";
-import AdrianDesk from "./AdriansDesk";
+import AdrianDesk from "./models/AdriansDesk";
+import TeejaysDesk from "./models/TeejaysDesk";
 
 function App() {
 	return (
@@ -9,7 +10,8 @@ function App() {
 				<Stage
 					environment={"apartment"}
 					intensity={1}>
-					<AdrianDesk scale={1} />
+					{/* <AdrianDesk scale={1} /> */}
+					<TeejaysDesk scale={0.2} />
 				</Stage>
 			</Center>
 		</>

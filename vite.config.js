@@ -23,9 +23,7 @@ export default defineConfig({
 	],
 	server: {
 		host: false,
-		open: !(
-			"SANDBOX_URL" in process.env || "CODESANDBOX_HOST" in process.env
-		),
+		open: !("SANDBOX_URL" in process.env || "CODESANDBOX_HOST" in process.env),
 	},
 	build: {
 		outDir: "../dist",
