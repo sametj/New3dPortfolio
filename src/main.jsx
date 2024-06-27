@@ -6,7 +6,7 @@ import "./index.css";
 
 const cameraSetting = {
   fov: 75,
-  position: [0, 2, 5],
+  position: [0, 1, 5],
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
