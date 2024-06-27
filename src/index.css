@@ -1,3 +1,14 @@
+:root {
+	--box-shadow: 2px 2px 5px black;
+}
+
+/* titillium-web-regular - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: "Titillium Web";
+	src: url("/fonts/titillium-web-v17-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 html,
 body,
 #root {
@@ -10,6 +21,7 @@ body,
 	height: 100%;
 	overflow: hidden;
 	background-color: black;
+	font-family: "Titillium Web", sans-serif;
 }
 
 .html-component-blurriness-hack {

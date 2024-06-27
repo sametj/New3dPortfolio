@@ -22,7 +22,7 @@ export default defineConfig({
 		},
 	],
 	server: {
-		host: false,
+		host: true,
 		open: !("SANDBOX_URL" in process.env || "CODESANDBOX_HOST" in process.env),
 	},
 	build: {

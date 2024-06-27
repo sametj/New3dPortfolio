@@ -1,0 +1,104 @@
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
+
+export default function LandingRoom(props) {
+	const { nodes, materials } = useGLTF("/models/PCroom2.glb");
+	return (
+		<group
+			{...props}
+			dispose={null}>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006.geometry}
+				material={materials.LandingRoom}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_1.geometry}
+				material={materials["Material.003"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_2.geometry}
+				material={materials["Material.005"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_3.geometry}
+				material={materials["tv stanb.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_4.geometry}
+				material={materials["Material.006"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_5.geometry}
+				material={materials["Keyboard.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_6.geometry}
+				material={materials["Green.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_7.geometry}
+				material={materials["Red.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_8.geometry}
+				material={materials["Yellow.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_9.geometry}
+				material={materials["TVFrame.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_10.geometry}
+				material={materials["Iphone.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_11.geometry}
+				material={materials["Wall.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_12.geometry}
+				material={materials["Wheels.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_13.geometry}
+				material={materials["Screen.001"]}
+			/>
+			<mesh
+				castShadow
+				receiveShadow
+				geometry={nodes.Plane006_14.geometry}
+				material={materials.Text}
+			/>
+		</group>
+	);
+}
+
+useGLTF.preload("/models/PCroom2.glb");
