@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import * as Icons from "./svgs";
+import { SVGS } from "./svgs";
 
 function About({ screenRef, setMonitor }) {
   return (
@@ -11,9 +11,9 @@ function About({ screenRef, setMonitor }) {
       <div className="about-container">
         <div className="about-skills">
           <ul className="icon-list">
-            {Object.keys(Icons).map((iconKey) => (
-              <li className="icon" key={iconKey}>
-                {React.createElement(Icons[iconKey])}
+            {SVGS.map((svg, i) => (
+              <li className="icon" key={i}>
+                {React.createElement(svg)}
               </li>
             ))}
           </ul>
