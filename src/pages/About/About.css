@@ -1,9 +1,44 @@
 .about {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 90px;
-	height: 55px;
-	color: black;
-	background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+.about-skills {
+  flex: 1;
+}
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h2 {
+    font-size: var(--h2-size);
+  }
+
+  h4 {
+    font-size: var(--h4-size);
+  }
+
+  p {
+    font-size: var(--p-size);
+  }
+}
+
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.icon {
+  list-style: none;
+  width: 7rem;
 }

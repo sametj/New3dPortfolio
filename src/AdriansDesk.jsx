@@ -185,10 +185,10 @@ export default function AdrianDesk(props) {
             <Html
               prepend
               rotation-x={-Math.PI / 2}
-              position={[0, 0.1, 0]}
+              position={[-1.3, -1, 0.02]}
               transform
               occlude
-              scale={0.2}
+              scale={[0.76, 0.82, 0.1]}
             >
               <Welcome
                 setMonitor={setMonitor}

@@ -1,16 +1,25 @@
-import { Center, OrbitControls, Stage } from "@react-three/drei";
-import AdrianDesk from "./AdriansDesk";
+import { Center, useHelper } from "@react-three/drei";
+
 import { Perf } from "r3f-perf";
-import Desk from "./components/NewDesk";
+
+import NewDesk2 from "./components/NewDesk2";
+import { useRef } from "react";
+import { DirectionalLightHelper } from "three";
 
 function App() {
+  const directionalLight = useRef();
+  const directionalLight2 = useRef();
+  useHelper(directionalLight, DirectionalLightHelper, "blue");
+  useHelper(directionalLight2, DirectionalLightHelper, "blue");
+
   return (
     <>
-      <ambientLight intensity={0.8} />
+      <ambientLight intensity={2} />
       <Perf />
-      <directionalLight intensity={4} position={[2, 2, 2]} />
+      <directionalLight intensity={5} position={[-5, 10, 20]} />
+      <directionalLight intensity={5} position={[5, 10, 20]} />
       <Center>
-        <Desk position={[4, 0, 2]} />
+        <NewDesk2 />
       </Center>
     </>
   );

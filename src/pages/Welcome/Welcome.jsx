@@ -1,23 +1,24 @@
 import React from "react";
+import image from "/LinkedIn3.png";
 import "./Welcome.css";
 
 function Welcome({ screenRef, setMonitor }) {
   return (
     <section
-      className="welcome"
+      className="welcome screen-content"
       onClick={() => setMonitor(screenRef)}
-      style={{ transform: "scale(5)" }}
     >
       <div className="hero-text">
         <h4>Hi, I am Adrian Joltea</h4>
         <h1>
           I&apos;m a <span>Front-end Developer</span>
         </h1>
-        <p>I can provide clean code and pixel perfect design</p>
-        <a>My Projects &rarr;</a>
+        <p>I create engaging user experiences</p>
       </div>
 
-      <div className="hero-img"></div>
+      <div className="hero-img">
+        <img src={image} alt="profile" />
+      </div>
     </section>
   );
 }
