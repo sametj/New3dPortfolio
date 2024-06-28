@@ -1,6 +1,7 @@
 import React from "react";
 import image from "/LinkedIn3.png";
 import "./Welcome.css";
+import AnimatedText from "../../lib/AnimatedText";
 
 function Welcome({ screenRef, setMonitor }) {
   return (
@@ -9,11 +10,18 @@ function Welcome({ screenRef, setMonitor }) {
       onClick={() => setMonitor(screenRef)}
     >
       <div className="hero-text">
-        <h4>Hi, I am Adrian Joltea</h4>
+        <h4>
+          <AnimatedText text="Hi, I am Adrian Joltea" />
+        </h4>
         <h1>
-          I&apos;m a <span>Front-end Developer</span>
+          I'm a{" "}
+          <span className="text-color">
+            <AnimatedText text="Front-end Developer" />
+          </span>
         </h1>
-        <p>I create engaging user experiences</p>
+        <p>
+          <AnimatedText text="I create engaging user experiences" />
+        </p>
       </div>
 
       <div className="hero-img">

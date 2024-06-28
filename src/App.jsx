@@ -2,7 +2,7 @@ import { Center, useHelper } from "@react-three/drei";
 
 import { Perf } from "r3f-perf";
 
-import Desk from "./components/NewDesk2";
+import Desk from "./components/Desk";
 import { useRef } from "react";
 import { DirectionalLightHelper } from "three";
 
