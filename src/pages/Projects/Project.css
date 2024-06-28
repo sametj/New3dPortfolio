@@ -1,24 +1,13 @@
-.project {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 900px;
-	height: 400px;
-	margin: 0;
-	padding: 0;
-	background-color: #a594f9;
-}
-
 .project_cards {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	width: 90%;
-	height: 90%;
+	height: 82%;
 	padding: 12px;
-	border: 2px solid black;
-	border-radius: 10px;
+	border: var(--border);
+	border-radius: var(--border-radius);
 	overflow-y: scroll;
 	gap: 60px;
 }
@@ -28,11 +17,11 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	background-color: va;
+	background-color: v5;
 	width: 300px;
-	border: 2px solid black;
-	height: 97%;
-	border-radius: 10px;
+	border: var(--border);
+	height: 80%;
+	border-radius: var(--border-radius);
 	padding: 12px;
 	text-align: center;
 	box-shadow: var(--box-shadow);
@@ -41,7 +30,7 @@
 .project_card img {
 	width: 100%;
 	height: 50%;
-	border-radius: 10px;
+	border-radius: var(--border-radius);
 }
 
 a {

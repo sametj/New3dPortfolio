@@ -1,0 +1,17 @@
+.sim_screen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1700px;
+	height: 800px;
+	margin: 0;
+	padding: 0;
+	background-color: #a594f9;
+}
+
+iframe {
+	padding: 20px;
+	width: 85%;
+	height: 100%;
+	border: none;
+}

@@ -10,10 +10,11 @@ import {
 	faReact,
 	faJava,
 } from "@fortawesome/free-brands-svg-icons";
+import Layout from "../../layout/Main/Main";
 
 function About({ screenRef, setMonitor }) {
-	const [title, setTitle] = useState("Test");
-	const [content, setContent] = useState("Test");
+	const [title, setTitle] = useState("About Me");
+	const [content, setContent] = useState("test");
 
 	const buttons = [
 		{
@@ -36,26 +37,33 @@ function About({ screenRef, setMonitor }) {
 	};
 
 	return (
-		<section
-			className='about'
-			onClick={() => setMonitor(screenRef)}>
-			<div className='container'>
-				<div className='about_nav'>
-					{buttons.map((button) => (
-						<button
-							key={button.title}
-							className='nav_button'
-							onClick={() => changeContent(button.title, button.content)}>
-							{button.title}
-						</button>
-					))}
+		<Layout>
+			<section
+				className='about'
+				onClick={() => setMonitor(screenRef)}>
+				<div className='container'>
+					<div className='about_nav'>
+						{buttons.map((button) => (
+							<button
+								style={{
+									backgroundColor:
+										title === button.title ? "#f3d9b1" : "#0a0908",
+									color: title === button.title ? "#0a0908" : "white",
+								}}
+								key={button.title}
+								className='nav_button'
+								onClick={() => changeContent(button.title, button.content)}>
+								{button.title}
+							</button>
+						))}
+					</div>
+					<div className='about_content'>
+						<div className='content_title'>{title}</div>
+						<div className='content'>{content}</div>
+					</div>
 				</div>
-				<div className='about_content'>
-					<div className='content_title'>{title}</div>
-					<div className='content'>{content}</div>
-				</div>
-			</div>
-		</section>
+			</section>
+		</Layout>
 	);
 }
 

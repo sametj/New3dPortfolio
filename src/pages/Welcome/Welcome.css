@@ -1,22 +1,4 @@
-.welcome {
-	width: 900px;
-	height: 380px;
-	margin: 0;
-	padding: 0;
-}
-
-.welcome_canvas {
-	width: 1000px;
-	height: 220px;
-}
-#welcome_canvas > div {
-	background-color: beige;
-	width: 1000px;
-}
-
 #welcome_canvas > div > canvas {
-	margin: auto;
-
-	width: 1000px !important;
-	height: 380px !important;
+	width: 1400px !important;
+	height: 650px !important;
 }

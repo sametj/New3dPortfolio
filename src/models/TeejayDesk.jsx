@@ -4,6 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import Welcome from "../pages/Welcome";
 import About from "../pages/About";
 import Project from "../pages/Projects";
+import SimScreen from "../pages/SimScreen";
 
 export default function TeejaysDesk(props) {
 	const { nodes, materials } = useGLTF("/models/IsoRoom.glb");
@@ -14,11 +15,11 @@ export default function TeejaysDesk(props) {
 	const LeftMonitorScreen = useRef();
 	const RightMonitorScreen = useRef();
 	const SimMontorScreen = useRef();
+	const ChairRef = useRef();
 
 	const setMonitor = (ref) => {
 		setActiveScreen(ref.current);
 		setActive(true);
-
 		if (cameraRef.current) {
 			cameraRef.current.enabled = true;
 		}
@@ -28,17 +29,17 @@ export default function TeejaysDesk(props) {
 		if (!active) {
 			return;
 		} else {
-			cameraRef.current?.fitToSphere(activeScreen, true);
+			cameraRef.current?.fitToBox(activeScreen, true);
 
 			const onRest = () => {
 				if (cameraRef.current) {
 					cameraRef.current.enabled = false;
-					cameraRef.current.removeEventListener("rest", onRest);
 				}
+				cameraRef.current.removeEventListener("rest", onRest);
+				cameraRef.current.addEventListener("rest", onRest);
 			};
-			cameraRef.current.addEventListener("rest", onRest);
 		}
-	}, []);
+	}, [activeScreen]);
 
 	useEffect(() => {
 		const handleKeyDown = (event) => {
@@ -88,6 +89,7 @@ export default function TeejaysDesk(props) {
 					rotation={[0, Math.PI / 2, 0]}
 				/>
 				<group
+					ref={ChairRef}
 					position={[-30.515, -1.105, 21.031]}
 					rotation={[0, 0.817, -1.521]}>
 					<mesh
@@ -734,7 +736,7 @@ export default function TeejaysDesk(props) {
 					position={[-23.391, 7.852, -11.435]}
 					rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
 					<Html
-						scale={[0.76, 0.82, 0.1]}
+						scale={0.5}
 						occlude='blending'
 						rotation-x={Math.PI / 2}
 						rotation-z={Math.PI / 2}
@@ -756,11 +758,12 @@ export default function TeejaysDesk(props) {
 					position={[-5.361, 7.852, -9.146]}
 					rotation={[0, 1.315, -Math.PI / 2]}>
 					<Html
-						scale={[0.76, 0.8, 0.1]}
+						zIndexRange={[10, 1]}
+						scale={0.5}
 						occlude='blending'
 						rotation-x={Math.PI / 2}
 						rotation-z={Math.PI / 2}
-						position={[-1.2, -0.9, 0]}
+						position={[-1.2, -0.92, 0]}
 						transform>
 						<Project
 							screenRef={RightMonitorScreen}
@@ -778,7 +781,8 @@ export default function TeejaysDesk(props) {
 					position={[-41.181, 7.852, -7.914]}
 					rotation={[-Math.PI, 1.165, Math.PI / 2]}>
 					<Html
-						scale={[0.76, 0.8, 0.1]}
+						zIndexRange={[10, 1]}
+						scale={0.5}
 						occlude='blending'
 						rotation-x={Math.PI / 2}
 						rotation-z={Math.PI / 2}
@@ -800,11 +804,17 @@ export default function TeejaysDesk(props) {
 					position={[41.282, 3.364, 5.791]}
 					rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
 					<Html
-						scale={[0.76, 0.7, 0.1]}
+						scale={0.5}
 						occlude='blending'
 						rotation-x={Math.PI / 2}
-						position={[0, -1, 0.02]}
-						transform></Html>
+						rotation-z={Math.PI / 2}
+						position={[-1.7, -1, 0.02]}
+						transform>
+						<SimScreen
+							screenRef={SimMontorScreen}
+							setMonitor={setMonitor}
+						/>
+					</Html>
 				</mesh>
 			</group>
 		</>
