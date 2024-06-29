@@ -39,7 +39,7 @@ export default function TeejaysDesk(props) {
 				cameraRef.current.addEventListener("rest", onRest);
 			};
 		}
-	}, [activeScreen]);
+	}, [active, activeScreen]);
 
 	useEffect(() => {
 		const handleKeyDown = (event) => {

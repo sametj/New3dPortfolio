@@ -2,10 +2,8 @@ import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { Canvas } from "@react-three/fiber";
-
 import "./index.css";
-import { Loader } from "@react-three/drei";
-import Cloud from "./models/Cloud.jsx";
+import LandingPage from "./pages/Landing";
 
 const cameraSetting = {
 	fov: 55,
@@ -14,6 +12,8 @@ const cameraSetting = {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
+		<LandingPage />
+
 		<Canvas
 			linear
 			className='main_canvas'

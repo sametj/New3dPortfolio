@@ -14,7 +14,6 @@ import Layout from "../../layout/Main/Main";
 
 function About({ screenRef, setMonitor }) {
 	const [title, setTitle] = useState("About Me");
-	const [content, setContent] = useState("test");
 
 	const buttons = [
 		{
@@ -30,6 +29,8 @@ function About({ screenRef, setMonitor }) {
 			content: <SkillContent />,
 		},
 	];
+
+	const [content, setContent] = useState(buttons[0].content);
 
 	const changeContent = (title, content) => {
 		setTitle(title);

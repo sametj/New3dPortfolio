@@ -1,0 +1,67 @@
+.landing_page {
+	background-image: url("/images/Isoroom.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+	width: 100%;
+	opacity: 1;
+	transition: opacity 3s ease;
+}
+
+.landing_page_content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+
+	height: 100%;
+	width: 100%;
+	padding: 0 20px;
+}
+
+.landing_content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	height: 40%;
+	border-radius: 10px;
+	gap: 20px;
+}
+
+.landing_page_content h1 {
+	font-size: 3rem;
+	color: white;
+}
+
+.landing_page_content p {
+	font-size: 1.5rem;
+	color: white;
+}
+
+.fade_out {
+	opacity: 0;
+}
+
+button {
+	background-color: #f3d9b1;
+	color: black;
+	font-weight: bolder;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
