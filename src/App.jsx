@@ -1,49 +1,50 @@
 import { Center, Stage } from "@react-three/drei";
-import TeejayDesk from "./models/TeejayDesk";
-import { Perf } from "r3f-perf";
 import { Stars, MeshReflectorMaterial } from "@react-three/drei";
+import TeejaysRoom from "./models/TeejaysRoom";
 
 function App() {
 	return (
 		<>
 			<Stars
 				radius={100}
-				depth={20}
+				depth={50}
 				count={5000}
 				factor={4}
-				saturation={2}
+				saturation={0}
 				fade
-				speed={2}
-			/>
-			<fog
-				attach='fog'
-				args={["#A594F9", 10, 20]}
-			/>
-			<color
-				attach='background'
-				args={["#A594F9"]}
 			/>
 
 			<Center>
 				<Stage
-					castShadow
+					center={false}
+					adjustCamera={false}
 					preset={"portrait"}
 					environment={"city"}
 					intensity={1}>
-					<TeejayDesk
-						scale={0.1}
-						position={[0, 0, 2]}
+					<TeejaysRoom
+						rotation-y={-Math.PI}
+						position={[1, 2, 0]}
+						scale={1}
 					/>
 				</Stage>
 			</Center>
+
+			<fog
+				attach='fog'
+				args={["#0f0447", 10, 20]}
+			/>
+			<color
+				attach='background'
+				args={["#0f0447"]}
+			/>
+
 			<mesh
 				rotation-x={-Math.PI / 2}
-				position-y={-2}>
+				position-y={-2.2}>
 				<planeGeometry args={[100, 40]} />
-				{/* <meshBasicMaterial color='#F3D9B1' /> */}
 				<MeshReflectorMaterial
 					blur={[300, 100]}
-					resolution={2048}
+					resolution={128}
 					mixBlur={1}
 					mixStrength={80}
 					roughness={1}

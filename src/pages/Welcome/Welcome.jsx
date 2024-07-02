@@ -19,19 +19,8 @@ function Welcome({ screenRef, setMonitor }) {
 				onClick={() => setMonitor(screenRef)}>
 				<Canvas
 					camera={{ fov: 45, near: 0.1, far: 1000, position: [0, 2, 5] }}
-					dpr={Math.max(window.devicePixelRatio, 5)}
+					dpr={Math.max(window.devicePixelRatio, 3)}
 					id='welcome_canvas'>
-					<ambientLight intensity={3} />
-					<Stars
-						radius={100}
-						depth={50}
-						count={5000}
-						factor={4}
-						saturation={0}
-						fade
-						speed={1}
-					/>
-
 					<Stage intensity={1}>
 						<PresentationControls
 							global
@@ -49,16 +38,12 @@ function Welcome({ screenRef, setMonitor }) {
 						</PresentationControls>
 					</Stage>
 
-					<fog
-						attach='fog'
-						args={["#A594F9", 20, 40]}
-					/>
 					<color
 						attach='background'
 						args={["#A594F9"]}
 					/>
 
-					<mesh
+					{/* <mesh
 						rotation-x={-Math.PI / 2}
 						position-y={-1.5}>
 						<planeGeometry args={[120, 100]} />
@@ -74,7 +59,7 @@ function Welcome({ screenRef, setMonitor }) {
 							color='#050505'
 							metalness={0.5}
 						/>
-					</mesh>
+					</mesh> */}
 				</Canvas>
 			</section>
 		</Layout>
